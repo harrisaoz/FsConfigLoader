@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PackageId>FsConfigLoader</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Anthony Harris</Authors>
+        <RepositoryUrl>https://github.com/harrisaoz/FsConfigLoader</RepositoryUrl>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Load.fs" />
+        <None Include="nuget.config" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FSharp.Json" Version="0.4.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+    </ItemGroup>
+</Project>
