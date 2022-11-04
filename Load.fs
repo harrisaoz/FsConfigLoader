@@ -7,8 +7,7 @@ type ConfigurationSource =
     | ConfigurationFile of name: string
     | JsonText of json: string
 
-type ProgramConfiguration =
-    | ProgramConfiguration of config: IConfiguration
+type ProgramConfiguration = ProgramConfiguration of config: IConfiguration
 
 let tryParseInt (s: string): int option =
     try
