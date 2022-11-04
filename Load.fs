@@ -23,12 +23,22 @@ let fromJsonText (json: string) =
     with
         ex -> Result.Error ex.Message
 
-let fromJsonFile (filename: string) =
+let fromJsonFileInDir maybeDir (filename: string) =
     try
-        ConfigurationBuilder().AddJsonFile(filename).Build() :> IConfiguration
-        |> Ok
+        let builder: IConfigurationBuilder =
+            match maybeDir with
+            | None ->
+                ConfigurationBuilder()
+            | Some dir ->
+                ConfigurationBuilder().SetBasePath(dir)
+        builder.AddJsonFile(filename).Build() :> IConfiguration
+        |> Result.Ok
     with
-        ex -> Result.Error ex.Message
+    | :? OutOfMemoryException -> reraise()
+    | ex -> Result.Error ex.Message
+
+let fromJsonFile =
+    fromJsonFileInDir None
 
 let fromSource source =
     match source with
