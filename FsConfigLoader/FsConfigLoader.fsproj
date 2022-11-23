@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageId>FsConfigLoader</PackageId>
+        <Version>0.1.0</Version>
+        <RepositoryUrl>https://github.com/harrisaoz/FsConfigLoader</RepositoryUrl>
+        <Authors>Anthony Harris</Authors>
+
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Core.fs" />
+        <Compile Include="FromFile.fs" />
+        <Compile Include="FromText.fs" />
+        <Compile Include="Parsers.fs" />
+        <Compile Include="Read.fs" />
+        <Compile Include="FromJson.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FsCombinators" Version="0.8.0" />
+      <PackageReference Include="FSharp.Json" Version="0.4.1" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    </ItemGroup>
+</Project>
