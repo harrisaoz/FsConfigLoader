@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageId>FsConfigLoader</PackageId>
-        <Version>0.1.1</Version>
+        <Version>0.1.2</Version>
         <RepositoryUrl>https://github.com/harrisaoz/FsConfigLoader</RepositoryUrl>
         <Authors>Anthony Harris</Authors>
 
